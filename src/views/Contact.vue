@@ -1,3 +1,3 @@
 <template>
-    <p>some news</p>
+    <p>contact me</p>
 </template>

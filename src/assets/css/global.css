@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body {
+  height: 100%;
+}
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #84B700;
+}
+
+body {
+	margin: 40px 0px;
+	padding: 0;
+	background: #FFFFFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	color: #5E5A3F;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #F0E9E9;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.8em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
