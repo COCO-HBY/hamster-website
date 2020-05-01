@@ -5,10 +5,13 @@
 </template>
 
 <script>
-import banner from '../components/banner.vue'
+import banner from '../components/HomeBanner.vue'
 export default {
     components:{
         banner,
     }
 }
 </script>
+<style lang="less" scoped>
+
+</style>

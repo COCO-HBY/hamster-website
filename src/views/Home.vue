@@ -8,12 +8,12 @@
       <div id="nav">
         <ul>
           <li class="current_li">
-            <router-link to="/homePage">Home</router-link>
+            <router-link to="/homePage">首页</router-link>
           </li>
-          <li><router-link to="/themes">Themes</router-link></li>
-          <li><router-link to="/adopt">Adopt</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li><router-link to="/themes">小宠趣事</router-link></li>
+          <li><router-link to="/adopt">领养仓鼠</router-link></li>
+          <li><router-link to="/about">关于仓鼠</router-link></li>
+          <li><router-link to="/contact">联系我们</router-link></li>
         </ul>
         <div id="search"><input type="text" /></div>
       </div>
@@ -105,7 +105,6 @@ export default {
 }
 #nav {
   width: 306px;
-  // height: 340px;
   // background-color: pink;
 }
 #nav ul {
@@ -118,12 +117,12 @@ export default {
   background: url(../assets/img/img02.jpg) no-repeat left top;
 }
 #nav ul li {
-  padding: 5px 10px;
+  padding: 5px 20px;
   background: url(../assets/img/img10.jpg) repeat-x left bottom;
 }
 #nav ul li a {
   display: block;
-  padding: 0px 0px 0px 30px;
+  padding: 0px 0px 0px 35px;
   background: url(../assets/img/img13.jpg) no-repeat left 4px;
   color: #bd778e;
 }
