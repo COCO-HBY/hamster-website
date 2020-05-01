@@ -1,13 +1,15 @@
 <template>
   <div id="home">
     <div id="logo">
-      <h1>Hamster</h1>
+      <h1>Hamster Land</h1>
       <p>by <a>Guangzhou</a></p>
     </div>
     <div id="container">
       <div id="nav">
         <ul>
-          <li><router-link to="/homePage">Home</router-link></li>
+          <li class="current_li">
+            <router-link to="/homePage">Home</router-link>
+          </li>
           <li><router-link to="/themes">Themes</router-link></li>
           <li><router-link to="/adopt">Adopt</router-link></li>
           <li><router-link to="/about">About</router-link></li>
@@ -15,29 +17,33 @@
         </ul>
         <div id="search"><input type="text" /></div>
       </div>
-      <router-view />
+      <router-view ></router-view>
     </div>
     <div id="footer-content">
-      <div id="col1">
-        <ul class="style1">
-          <li><a href="#">Etiam malesuada rutrum enim</a></li>
-          <li><a href="#">Aenean elementum facilisis ligula</a></li>
-          <li><a href="#">Ut tincidunt elit vitae augue</a></li>
-        </ul>
+      <div id="hamster-sina">
+        <img src="../assets/img/sina.jpg" alt="" />
+        <div>
+          <h4>官方微博</h4>
+          <p>关注官方微博，精彩活动抢先获得</p>
+          <button type="button">关注</button>
+        </div>
       </div>
-      <div id="col2">
-        <ul class="style1">
-          <li><a href="#">Etiam malesuada rutrum enim</a></li>
-          <li><a href="#">Aenean elementum facilisis ligula</a></li>
-          <li><a href="#">Ut tincidunt elit vitae augue</a></li>
-        </ul>
+      <div id="hamster-wechat">
+        <img src="../assets/img/wechat.jpg" alt="" />
+        <div>
+          <h4>小宠公众号</h4>
+          <p>扫二维码，一手资讯抢先到</p>
+          <button type="button">微信号：hby313</button>
+        </div>
       </div>
-      <div id="col3">
-        <ul class="style1">
-          <li><a href="#">Etiam malesuada rutrum enim</a></li>
-          <li><a href="#">Aenean elementum facilisis ligula</a></li>
-          <li><a href="#">Ut tincidunt elit vitae augue</a></li>
-        </ul>
+      <div id="hamster-app">
+        <img src="../assets/img/app.jpg" alt="" />
+        <div>
+          <h4>小宠APP</h4>
+          <p>超级有爱的小宠交流平台</p>
+          <button type="button">iPhone下载</button>
+          <button type="button">Android下载</button>
+        </div>
       </div>
     </div>
     <div id="footer">
@@ -98,12 +104,12 @@ export default {
   flex-direction: row;
 }
 #nav {
-  width: 290px;
+  width: 306px;
   // height: 340px;
-  background-color: pink;
+  // background-color: pink;
 }
 #nav ul {
-  width: 228px;
+  // width: 245px;
   height: 340px;
   padding: 0px 30px;
   display: flex;
@@ -139,7 +145,8 @@ export default {
   overflow: hidden;
   width: 1000px;
   height: 70px;
-  margin: 10px auto;
+  margin: 0 auto;
+  padding-top: 15px;
   font-size: 14px;
   text-align: center;
   color: #9c9781;
@@ -148,11 +155,33 @@ export default {
 
 #footer-content {
   width: 1000px;
-  height: 150px;
+  height: 200px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background: url(../assets/img/img05.jpg) no-repeat left top;
+}
+#footer-content > div {
+  width: 28%;
+  height: 150px;
+  margin-left: 10px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-content p {
+  font-size: 12px;
+}
+#footer-content button {
+  padding: 2px;
+  border-radius: 5px;
+}
+#footer-content > div > div {
+  width: 50%;
+  margin-left: 10px;
 }
 </style>

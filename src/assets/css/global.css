@@ -52,3 +52,10 @@ p, ul, ol {
 	margin-top: 0;
 	line-height: 180%;
 }
+
+/* 左右边框 */
+#page {
+	width: 1000px;
+	margin: 0px auto;
+	background: url(../img/img04.jpg) repeat-y left top;
+}
