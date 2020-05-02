@@ -15,9 +15,8 @@
           <li><router-link to="/about">关于仓鼠</router-link></li>
           <li><router-link to="/contact">联系我们</router-link></li>
         </ul>
-        <div id="search"><input type="text" /></div>
       </div>
-      <router-view ></router-view>
+      <router-view/>
     </div>
     <div id="footer-content">
       <div id="hamster-sina">
@@ -100,23 +99,25 @@ export default {
 #container {
   width: 1000px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
 }
-#nav {
-  width: 306px;
-  // background-color: pink;
+#container #nav {
+	width: 306px;
+	height: 340px;
+  margin: 0px;
+  float: left;
 }
-#nav ul {
-  // width: 245px;
+#nav >ul {
   height: 340px;
   padding: 0px 30px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: url(../assets/img/img02.jpg) no-repeat left top;
 }
-#nav ul li {
+#nav >ul li {
   padding: 5px 20px;
   background: url(../assets/img/img10.jpg) repeat-x left bottom;
 }
@@ -126,20 +127,7 @@ export default {
   background: url(../assets/img/img13.jpg) no-repeat left 4px;
   color: #bd778e;
 }
-#search {
-  height: 70px;
-  margin-left: 11px;
-  background: url(../assets/img/img12.jpg) no-repeat left top;
-}
-#search input {
-  height: 30px;
-  width: 240px;
-  margin-left: 26px;
-  margin-top: 20px;
-  font-size: 22px;
-  background-color: #b3ce81;
-  // display: none;
-}
+
 #footer {
   overflow: hidden;
   width: 1000px;

@@ -2,7 +2,7 @@
   <div class="carousel">
     <transition-group tag="ul" class="slide" name="image">
       <li v-for="(image, index) in imgs" :key="index" v-show="index === mark">
-        <img :src="getImgUrl(image)" />
+        <img :src="image" />
       </li>
     </transition-group>
     <div class="bullet">
@@ -26,16 +26,19 @@ export default {
     };
   },
   mounted() {
-    //在DOM加载完成后，下个tick中开始轮播
+    //在DOM加载完成后
+    this.imgs = this.imgs.map((item) => {
+      return require("@/assets/img/" + item);
+    });
     this.play();
   },
   beforeDestroy(){
     clearInterval(this.timer);
   },
   methods: {
-    getImgUrl(icon) {
-      return require("@/assets/img/" + icon);
-    },
+    // getImgUrl(icon) {
+    //   return require("@/assets/img/" + icon);
+    // },
     autoPlay() {
       this.mark++;
       if (this.mark === this.imgs.length) {
@@ -93,12 +96,12 @@ span {
 
 .image-enter-active {
   transform: translateX(0);
-  transition: all 1s ease;
+  transition: all 1.5s ease;
 }
 
 .image-leave-active {
   transform: translateX(-100%);
-  transition: all 1s ease;
+  transition: all 1.5s ease;
 }
 
 .image-enter {

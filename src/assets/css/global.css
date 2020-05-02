@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.8em;
+	font-size: 2.3em;
 }
 
 h3 {
@@ -53,9 +53,4 @@ p, ul, ol {
 	line-height: 180%;
 }
 
-/* 左右边框 */
-#page {
-	width: 1000px;
-	margin: 0px auto;
-	background: url(../img/img04.jpg) repeat-y left top;
-}
+
