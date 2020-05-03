@@ -47,7 +47,7 @@ export default {
       }
     },
     play() {
-      this.timer = setInterval(this.autoPlay, 4000);
+      this.timer = setInterval(this.autoPlay, 5000);
     },
     stop() {
       clearInterval(this.timer);

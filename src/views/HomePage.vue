@@ -1,7 +1,7 @@
 <template>
   <div id="homePage">
     <banner></banner>
-    <div id="page">
+    <div class="page">
       <div id="sidebar">
         <div id="search">
           <input type="text" />
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="themes">
-          <h2 class="title"><a href="#">宠物仓鼠的饲养概要 </a></h2>
+          <h2 class="title"><a href="#">宠物仓鼠种类 </a></h2>
           <p class="meta">
             <span class="date">April 06, 2019 </span
             ><span class="posted">Posted by <a href="#">Saphir</a></span>
@@ -98,7 +98,7 @@ export default {
 </script>
 <style lang="less" scoped>
 /* 左右边框 */
-#page {
+.page {
   width: 1000px;
   margin: 0px auto;
   display: flex;
@@ -128,6 +128,7 @@ export default {
   height: 550px;
   border-radius: 2%;
   background-color: #f3e5ae;
+  overflow: hidden;
 }
 .adopt-info {
   width: 79%;

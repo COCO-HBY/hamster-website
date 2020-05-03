@@ -138,6 +138,7 @@ export default {
   text-align: center;
   color: #9c9781;
   background: url(../assets/img/img07.jpg) no-repeat left top;
+  clear: both;
 }
 
 #footer-content {
@@ -149,6 +150,7 @@ export default {
   justify-content: center;
   align-items: center;
   background: url(../assets/img/img05.jpg) no-repeat left top;
+  clear: both;
 }
 #footer-content > div {
   width: 28%;
