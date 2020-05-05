@@ -27,13 +27,13 @@
   </div>
 </template>
 <script>
-import maps from "../components/map/maps";
+
 export default {
   mounted() {
     // console.log("contact loaded");
   },
   components: {
-    maps,
+    'maps': () => import('../components/map/maps')
   },
 };
 </script>
