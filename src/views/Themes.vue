@@ -4,8 +4,12 @@
       <img src="../assets/img/banner.jpg" alt="" />
     </div>
     <div class="themes">
-      <div class="themes-page">————————<h4>小宠趣事 <img src="../assets/img/guazi.jpg" alt=""></h4>————————</div>
-      
+      <div class="themes-page">
+        ————————
+        <h4>小宠趣事 <img src="../assets/img/guazi.jpg" alt="" /></h4>
+        ————————
+      </div>
+
       <ul class="theme-list">
         <li class="theme">
           <h4 class="title"><a href="#">宠物仓鼠的饲养概要 </a></h4>
@@ -20,8 +24,7 @@
               本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：
               叙利亚仓鼠（Mesocricetus
               auratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。
-              坎贝尔仓鼠（Phodopus
-              campbelli）
+              坎贝尔仓鼠（Phodopus campbelli）
             </p>
             <p class="links">
               <a href="#">Read More</a>
@@ -72,8 +75,7 @@
             <p>
               仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。
               本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：
-              叙利亚仓鼠（Mesocricetus
-              auratus）
+              叙利亚仓鼠（Mesocricetus auratus）
             </p>
             <p class="links">
               <a href="#">Read More</a>
@@ -95,16 +97,35 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+      timer:''
+    }
+  },
+  mounted() {
+    let _this = this;
+    this.$nextTick(() => {
+      // console.log("Themesloading");
+      _this.timer = setTimeout(() => {
+        _this.$store.commit("updateLoadingStatus", { isLoading: false });
+        clearTimeout(_this.timer);
+      }, 500);
+    });
+  },
+};
+</script>
 <style lang="less" scoped>
 #themes-page {
   background: url(../assets/img/img04.jpg) repeat-y left top;
 }
-div.themes-page{
- font-size: 26px;
- text-align: center;
- margin-bottom: 20px;
+div.themes-page {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-div.themes-page img{
+div.themes-page img {
   margin-right: 3px;
 }
 .themes {
@@ -174,7 +195,7 @@ ul.pagination li a {
   border-radius: 5px;
 }
 ul.pagination li a.active {
-  background-color: #84B700;
+  background-color: #84b700;
   color: white;
   border-radius: 5px;
 }

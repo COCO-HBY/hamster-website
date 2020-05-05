@@ -1,6 +1,7 @@
 <template>
   <div id="homePage">
-    <banner></banner>
+    <keep-alive><banner></banner></keep-alive>
+    <!-- <banner></banner> -->
     <div class="page">
       <div id="sidebar">
         <div id="search">
@@ -89,10 +90,24 @@
 </template>
 
 <script>
-import banner from "../components/HomeBanner.vue";
 export default {
+  data(){
+    return{
+      timer:''
+    }
+  },
   components: {
-    banner,
+    banner: () => import("../components/HomeBanner.vue"),
+  },
+  mounted() {
+    let _this = this;
+    this.$nextTick(() => {
+      // console.log("homeloading");
+      _this.timer = setTimeout(() => {
+        _this.$store.commit("updateLoadingStatus", { isLoading: false });
+        clearTimeout(_this.timer); 
+      }, 1000);  
+    });
   },
 };
 </script>
@@ -135,7 +150,7 @@ export default {
   margin: 0 auto;
   text-align: center;
 }
-.adopt-info h4{
+.adopt-info h4 {
   margin: 10px 0;
 }
 #adopt img {
@@ -143,11 +158,11 @@ export default {
   height: 300px;
   border: 1px solid #625e48;
 }
-#adopt .information p{
+#adopt .information p {
   text-align: left;
   font-size: 16px;
 }
-.adopt-info button{
+.adopt-info button {
   margin: 10px 0;
   font-size: 18px;
   color: #fff;

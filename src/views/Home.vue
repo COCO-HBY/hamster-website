@@ -60,12 +60,12 @@
 export default {
   name: "Home",
   components: {},
-};
+}
 </script>
 
 <style lang="less" scoped>
 #home {
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 0;
 }
 //  logo

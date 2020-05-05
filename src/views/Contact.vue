@@ -29,8 +29,21 @@
 <script>
 
 export default {
+  data(){
+    return{
+       timer: "",
+    }
+  },
   mounted() {
+    let _this = this;
     // console.log("contact loaded");
+    this.$nextTick(() => {
+      // console.log("contactloading");
+      _this.timer = setTimeout(() => {
+        _this.$store.commit("updateLoadingStatus", { isLoading: false });
+        clearTimeout(_this.timer);
+      }, 500);
+    });
   },
   components: {
     'maps': () => import('../components/map/maps')

@@ -26,7 +26,7 @@ export default {
     };
   },
   mounted() {
-    //在DOM加载完成后
+    //在DOM加载完成后，加载图片模块
     this.imgs = this.imgs.map((item) => {
       return require("@/assets/img/" + item);
     });
@@ -36,9 +36,6 @@ export default {
     clearInterval(this.timer);
   },
   methods: {
-    // getImgUrl(icon) {
-    //   return require("@/assets/img/" + icon);
-    // },
     autoPlay() {
       this.mark++;
       if (this.mark === this.imgs.length) {
