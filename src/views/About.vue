@@ -52,14 +52,51 @@
             <input type="radio" name="check" id="tab-2" /><label for="tab-2"
               >仓鼠用品</label
             >
-            <div>跑轮 食盆 垫材 饮水器 躲避屋 厕所</div>
+            <div>
+              <div class="content">
+                <a class="content-1"
+                  ><img src="../assets/img/longzi.png" alt="cage" />
+                  <span>笼子</span>
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/yushi.png" alt="washroom" /><span
+                    >浴室</span
+                  >
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/paolun.png" alt="paolun" /><span
+                    >跑轮</span
+                  >
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/xiaowu.png" alt="house" /><span
+                    >躲避屋</span
+                  >
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/yinshuiqi.png" alt="water" /><span
+                    >饮水器</span
+                  >
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/shipen.png" alt="shipen" /><span
+                    >食盆</span
+                  >
+                </a>
+                <a class="content-1"
+                  ><img src="../assets/img/guandao.png" alt="guandao" /><span
+                    >管道</span
+                  >
+                </a>
+              </div>
+            </div>
           </li>
-          <li class="container">
+          <!-- <li class="container">
             <input type="radio" name="check" id="tab-3" /><label for="tab-3"
               >仓鼠食物</label
             >
             <div>花生 麦穗 南瓜子</div>
-          </li>
+          </li> -->
           <li class="container">
             <input type="radio" name="check" id="tab-4" /><label for="tab-4"
               >仓鼠常见疾病</label
@@ -70,9 +107,15 @@
                   湿尾：腹泻水便，便便成灰白色，且伴有恶臭。仓鼠食欲不振，精神萎靡。行走或者坐下的时候会显得弓着背部状似驼背。严重情况下还会便血以及直肠脱垂。
                   湿尾症一般病发48小时后就可导致仓鼠死亡，所以在确认病情后应及时进行治疗。
                 </li>
-                <li>伪冬眠：伪冬眠的现象经常发生在入冬后，当饲养仓鼠的环境温度低于15摄氏度，仓鼠就非常有可能发生伪冬眠。如果此时不进行保温，生命就有危险了</li>
-                <li>中暑：表现为情绪反常，通常表现为情绪不安，甚至焦躁；还会流口水，根据病情下巴会有不同程度的变湿；体温有些高，托在手上可以感受到热量（类似于平时人用手抚摸额头判断是否发热一般）；正常生活节奏完全打乱，会出现不吃不喝的现象；精神萎靡不振，嗜睡情况根据中暑程度的不同会有所加深（严重的话，不断戳摇，仓鼠都没反应</li>
-                <li>失序症：近亲繁殖的导致的病症。发病时仓鼠会不断地转圈、后空翻、倒仰着走，直到力竭而亡。</li>
+                <li>
+                  伪冬眠：伪冬眠的现象经常发生在入冬后，当饲养仓鼠的环境温度低于15摄氏度，仓鼠就非常有可能发生伪冬眠。如果此时不进行保温，生命就有危险了
+                </li>
+                <li>
+                  中暑：表现为情绪反常，通常表现为情绪不安，甚至焦躁；还会流口水，根据病情下巴会有不同程度的变湿；体温有些高，托在手上可以感受到热量（类似于平时人用手抚摸额头判断是否发热一般）；正常生活节奏完全打乱，会出现不吃不喝的现象；精神萎靡不振，嗜睡情况根据中暑程度的不同会有所加深（严重的话，不断戳摇，仓鼠都没反应
+                </li>
+                <li>
+                  失序症：近亲繁殖的导致的病症。发病时仓鼠会不断地转圈、后空翻、倒仰着走，直到力竭而亡。
+                </li>
               </ul>
             </div>
           </li>
@@ -164,8 +207,9 @@ input + label + div {
   position: absolute;
   left: 0;
   top: 50px;
-  padding: 30px;
-  width: 100%;
+  padding-top: 30px;
+  padding-left: 60px;
+  width: 95%;
   flex-flow: row wrap;
 }
 /* input选中状态时候对应的label的样式 */
@@ -183,7 +227,7 @@ input:checked + label + div {
 .content-1 {
   display: inline-block;
   width: 100px;
-  margin-right: 50px;
+  margin-right: 80px;
   margin-bottom: 50px;
   text-align: center;
   color: #5e5a3f;
