@@ -1,7 +1,7 @@
 <template>
   <div id="adopt">
     <div class="adopt-banner">
-      <img src="../assets/img/adoptbanner.jpg" alt="banner" />
+      <img src="../assets/img/banner03.jpg" alt="banner" />
     </div>
     <div class="adopt-content">
       <div class="adopt-title">
@@ -37,6 +37,7 @@
   </div>
 </template>
 <script>
+import mixinLoading from '../mixins/mixin-loading'
 export default {
   data() {
     return {
@@ -78,15 +79,8 @@ export default {
       return require("@/assets/img/" + icon);
     },
   },
+  mixins:[mixinLoading],
   mounted() {
-    let _this = this;
-    this.$nextTick(() => {
-      console.log("Adoptloading");
-      _this.timer = setTimeout(() => {
-        _this.$store.commit("updateLoadingStatus", { isLoading: false });
-        clearTimeout(_this.timer);
-      }, 500);
-    });
   },
 };
 </script>
@@ -124,7 +118,9 @@ li.hamster-item {
   margin-bottom: 20px;
   padding: 10px;
   position: relative;
+  
 }
+
 li.hamster-item button {
   font-size: 18px;
   color: #fff;
@@ -144,14 +140,16 @@ li.hamster-item:nth-child(even) button {
 }
 li.hamster-item:nth-child(odd) {
   background: #ede8ca;
-  float: left;
+  // float: left;
   box-shadow: 10px 10px 5px #bbb;
+  animation: odd 1.5s ease 1;
 }
 li.hamster-item:nth-child(even) {
   background: #f3e5ae;
   float: right;
   text-align: right;
   box-shadow: -10px 10px 5px #bbb;
+  animation: even 1.5s ease 1;
 }
 li.hamster-item:nth-child(odd) > img {
   width: 170px;
@@ -166,15 +164,24 @@ li.hamster-item:nth-child(even) > img {
   margin-left: 20px;
 }
 
-//动画
-.hamster-enter-active {
-  transform: translateX(0);
-  transition: all 1.5s ease;
+@keyframes odd {
+  0% {
+    transform: translate(70%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
-.hamster-enter {
-  transform: translateX(100%);
+@keyframes even {
+  0% {
+    transform: translate(-70%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
+
 
 // 分页
 ul.pagination {

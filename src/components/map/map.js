@@ -43,9 +43,9 @@ function addMapControl() {
 var markerArr = [
   {
     title: "HamsterLand",
-    content: "",
+    content: "棠东地铁站A出口附近",
     point: "113.397076|23.136749",
-    isOpen: 0,
+    isOpen: 1,
     icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 },
   },
 ];
@@ -74,20 +74,18 @@ function addMarker() {
       var index = i;
       var _iw = createInfoWindow(i);
       var _marker = marker;
-      _marker.getLabel().hide();
-      _marker.openInfoWindow(_iw);
       _marker.addEventListener("click", function() {
         this.openInfoWindow(_iw);
       });
-      // _iw.addEventListener("open", function() {
-      //   _marker.getLabel().hide();
-      // });
-      // _iw.addEventListener("close", function() {
-      //   _marker.getLabel().show();
-      // });
-      // label.addEventListener("click", function() {
-      //   _marker.openInfoWindow(_iw);
-      // });
+      _iw.addEventListener("open", function() {
+        _marker.getLabel().hide();
+      });
+      _iw.addEventListener("close", function() {
+        _marker.getLabel().show();
+      });
+      label.addEventListener("click", function() {
+        _marker.openInfoWindow(_iw);
+      });
       if (!!json.isOpen) {
         label.hide();
         _marker.openInfoWindow(_iw);

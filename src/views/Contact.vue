@@ -1,7 +1,7 @@
 <template>
   <div id="contact">
     <div>
-      <img src="../assets/img/banner.jpg" alt="banner" />
+      <img src="../assets/img/banner04.jpg" alt="banner" />
     </div>
     <div class="contact-content">
       <img src="../assets/img/contact-icon.jpg" alt="icon" />
@@ -27,23 +27,15 @@
   </div>
 </template>
 <script>
-
+import mixinLoading from '../mixins/mixin-loading'
 export default {
   data(){
     return{
        timer: "",
     }
   },
+  mixins:[mixinLoading],
   mounted() {
-    let _this = this;
-    // console.log("contact loaded");
-    this.$nextTick(() => {
-      // console.log("contactloading");
-      _this.timer = setTimeout(() => {
-        _this.$store.commit("updateLoadingStatus", { isLoading: false });
-        clearTimeout(_this.timer);
-      }, 500);
-    });
   },
   components: {
     'maps': () => import('../components/map/maps')

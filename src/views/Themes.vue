@@ -1,10 +1,10 @@
 <template>
   <div id="themes-page">
-    <div id="banner">
-      <img src="../assets/img/banner.jpg" alt="" />
+    <div class="banner">
+      <img src="../assets/img/banner04.jpg" alt="" />
     </div>
     <div class="themes">
-      <div class="themes-page">
+      <div class="themes-title">
         ————————
         <h4>小宠趣事 <img src="../assets/img/guazi.jpg" alt="" /></h4>
         ————————
@@ -98,21 +98,15 @@
   </div>
 </template>
 <script>
+import mixinLoading from '../mixins/mixin-loading'
 export default {
   data(){
     return{
       timer:''
     }
   },
+  mixins:[mixinLoading],
   mounted() {
-    let _this = this;
-    this.$nextTick(() => {
-      // console.log("Themesloading");
-      _this.timer = setTimeout(() => {
-        _this.$store.commit("updateLoadingStatus", { isLoading: false });
-        clearTimeout(_this.timer);
-      }, 500);
-    });
   },
 };
 </script>
@@ -120,12 +114,12 @@ export default {
 #themes-page {
   background: url(../assets/img/img04.jpg) repeat-y left top;
 }
-div.themes-page {
+div.themes-title {
   font-size: 26px;
   text-align: center;
   margin-bottom: 20px;
 }
-div.themes-page img {
+div.themes-title img {
   margin-right: 3px;
 }
 .themes {

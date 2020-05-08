@@ -22,9 +22,10 @@ export default {
     return {
       mark: 0,
       timer: null,
-      imgs: ["banner01.jpg", "banner02.jpg", "banner03.jpg", "banner04.jpg"],
+      imgs: ["banner01.jpg", "banner02.jpg", "banner03.jpg", "banner05.jpg"],
     };
   },
+
   mounted() {
     //在DOM加载完成后，加载图片模块
     this.imgs = this.imgs.map((item) => {
@@ -32,9 +33,11 @@ export default {
     });
     this.play();
   },
-  beforeDestroy(){
+
+  beforeDestroy() {
     clearInterval(this.timer);
   },
+
   methods: {
     autoPlay() {
       this.mark++;
@@ -44,6 +47,9 @@ export default {
       }
     },
     play() {
+      if(this.timer){
+        this.stop();
+      }
       this.timer = setInterval(this.autoPlay, 5000);
     },
     stop() {
@@ -52,7 +58,6 @@ export default {
     },
     change(index) {
       this.mark = index;
-      this.stop();
       this.play();
     },
   },
