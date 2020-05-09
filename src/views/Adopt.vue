@@ -10,7 +10,7 @@
         <div class="line"></div>
       </div>
       <ul class="hamster-list">
-        <li class="hamster-item" v-for="item in infos" :key="item.id">
+        <li class="hamster-item" v-for="(item, index) in infos" :key="item.id">
           <img :src="getImgUrl(item.photo)" alt="" />
           <div>
             <p>name: {{ item.name }}</p>
@@ -18,7 +18,7 @@
             <p>age: {{ item.age }}</p>
             <p>favorite: {{ item.favorite }}</p>
             <p>address: {{ item.address }}</p>
-            <button>申请领养</button>
+            <button @click="applyAdopt(item, index)">申请领养</button>
           </div>
         </li>
       </ul>
@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import mixinLoading from '../mixins/mixin-loading'
+import mixinLoading from "../mixins/mixin-loading";
 export default {
   data() {
     return {
@@ -70,7 +70,7 @@ export default {
           photo: "adopt03.jpg",
         },
       ],
-      timer: "",
+      // timer: "",
     };
   },
 
@@ -78,10 +78,21 @@ export default {
     getImgUrl(icon) {
       return require("@/assets/img/" + icon);
     },
+
+    //申请领养
+    applyAdopt(item, index) {
+      this.$popup({
+        msg: "确定领养 " + item.name + " ?",
+        photo: require("@/assets/img/" + item.photo),
+        confirmFunc: () => {
+          this.infos.splice(index, 1);
+        },
+      });
+    },
   },
-  mixins:[mixinLoading],
-  mounted() {
-  },
+  // loading界面的弹出与注销
+  mixins: [mixinLoading],
+  mounted() {},
 };
 </script>
 <style lang="less" scoped>
@@ -118,14 +129,12 @@ li.hamster-item {
   margin-bottom: 20px;
   padding: 10px;
   position: relative;
-  
 }
 
 li.hamster-item button {
   font-size: 18px;
   color: #fff;
   padding: 4px 6px;
-  border-radius: 5px;
   background-color: #625e48;
 }
 li.hamster-item:nth-child(odd) button {
@@ -181,7 +190,6 @@ li.hamster-item:nth-child(even) > img {
     transform: translate(0, 0);
   }
 }
-
 
 // 分页
 ul.pagination {

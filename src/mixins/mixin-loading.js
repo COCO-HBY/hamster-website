@@ -1,4 +1,9 @@
 export default {
+  data(){
+    return{
+      timer: "",
+    }
+  },
   mounted() {
     let _this = this;
     this.$nextTick(() => {

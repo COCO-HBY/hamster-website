@@ -102,7 +102,7 @@ import mixinLoading from '../mixins/mixin-loading'
 export default {
   data(){
     return{
-      timer:''
+      // timer:''
     }
   },
   mixins:[mixinLoading],
