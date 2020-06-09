@@ -95,21 +95,21 @@ span {
 .active {
   background: #900000;
 }
-
+/* 动画开始过程 */
 .image-enter-active {
   transform: translateX(0);
   transition: all 1.5s ease;
 }
-
+/* 动画离开过程 */
 .image-leave-active {
   transform: translateX(-100%);
   transition: all 1.5s ease;
 }
-
+ /* 初始状态 */
 .image-enter {
   transform: translateX(100%);
 }
-
+/* 离开状态 */
 .image-leave {
   transform: translateX(0);
 }
