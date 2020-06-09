@@ -4,4 +4,6 @@ module.exports = {
       BMap: "BMap",
     },
   },
+
+  publicPath: ''
 };
