@@ -14,11 +14,11 @@
               <img :src="pets.img" alt="picture" />
             </div>
             <div class="information">
-              <p>Name: {{pets.information.name}}</p>
-              <p>Sex: {{pets.information.sex}}</p>
-              <p>Age: {{pets.information.age}}</p>
-              <p>Favorite: {{pets.information.favorite}}</p>
-              <p>Address:{{pets.information.address}}</p>
+              <p>Name: {{ pets.information.name }}</p>
+              <p>Sex: {{ pets.information.sex }}</p>
+              <p>Age: {{ pets.information.age }}</p>
+              <p>Favorite: {{ pets.information.favorite }}</p>
+              <p>Address:{{ pets.information.address }}</p>
             </div>
             <button @click="toAdopt">前往领养</button>
           </div>
@@ -41,7 +41,7 @@
               如果你想领养仓鼠，或者有意向饲养它们，请关注我们的领养频道。
             </p>
             <p class="links">
-              <a href="#">Read More</a
+              <a href="#" @click="pushTitle(0)">Read More</a
               >&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"
                 >Comments</a
               >
@@ -77,7 +77,7 @@
               campbelli）则不建议成群饲养。
             </p>
             <p class="links">
-              <a href="#">Read More</a
+              <a href="#" @click="pushTitle(1)">Read More</a
               >&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"
                 >Comments</a
               >
@@ -90,39 +90,44 @@
 </template>
 
 <script>
-import mixinLoading from '../mixins/mixin-loading'
+import mixinLoading from "../mixins/mixin-loading";
 export default {
-  data(){
-    return{
+  data() {
+    return {
       // timer:''
-      pets:{
-        img: require('../assets/img/adopt01.jpg'),
-        information:{
-          name: '肠粉',
-          sex: '公',
-          age: '3个月',
-          favorite: '南瓜子，面包虫',
-          address: '广州增城区'
-        }
+      pets: {
+        img: require("../assets/img/adopt01.jpg"),
+        information: {
+          name: "肠粉",
+          sex: "公",
+          age: "3个月",
+          favorite: "南瓜子，面包虫",
+          address: "广州增城区",
+        },
       },
-        
-    }
+    };
   },
   components: {
     banner: () => import("../components/HomeBanner.vue"),
   },
-  mixins:[mixinLoading],
-  mounted() {
-  },
+  mixins: [mixinLoading],
+  mounted() {},
   methods: {
-    toAdopt(){
-      if(window.localStorage.getItem('login')){
-        
+    toAdopt() {
+      if (window.localStorage.getItem("login")) {
       }
- 
-      this.$router.push('/adopt');
-    }
-  }
+
+      this.$router.push("/adopt");
+    },
+    pushTitle(id) {
+      this.$router.push({
+        path: "/themes/content",
+        query: {
+          id: id,
+        },
+      });
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
