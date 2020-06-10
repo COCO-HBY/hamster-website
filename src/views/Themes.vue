@@ -6,76 +6,21 @@
     <div class="themes">
       <div class="themes-title">
         ————————
-        <h4>小宠趣事 <img src="../assets/img/guazi.jpg" alt="" /></h4>
+        <h4>{{title}} <img src="../assets/img/guazi.jpg" alt="" /></h4>
         ————————
       </div>
 
       <ul class="theme-list">
-        <li class="theme">
-          <h4 class="title"><a href="#">宠物仓鼠的饲养概要 </a></h4>
+        <li class="theme" v-for="item in themes" :key="item.id">
+          <h4 class="title"><a href="#">{{item.title}} </a></h4>
           <p class="meta">
-            <span class="date">April 06, 2019 </span
-            ><span class="posted">Posted by <a href="#">Saphir</a></span>
+            <span class="date">{{item.date}}</span
+            ><span class="posted">Posted by <a href="#">{{item.posted}}</a></span>
           </p>
           <div style="clear: both;">&nbsp;</div>
           <div class="entry">
             <p>
-              仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。
-              本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：
-              叙利亚仓鼠（Mesocricetus
-              auratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。
-              坎贝尔仓鼠（Phodopus campbelli）
-            </p>
-            <p class="links">
-              <a href="#">Read More</a>
-            </p>
-          </div>
-        </li>
-        <li class="theme">
-          <h4 class="title"><a href="#">宠物仓鼠的饲养概要</a></h4>
-          <p class="meta">
-            <span class="date">April 06, 2019 </span
-            ><span class="posted">Posted by <a href="#">Saphir</a></span>
-          </p>
-          <div style="clear: both;">&nbsp;</div>
-          <div class="entry">
-            <p>
-              仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。
-              本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：
-              叙利亚仓鼠（Mesocricetus
-              auratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。
-              坎贝尔仓鼠（Phodopus
-              campbelli），为仓鼠亚科毛足鼠属（Phodopus）动物。
-              加卡利亚仓鼠（Phodopus
-              sungorus），为仓鼠亚科毛足鼠属（Phodopus）动物。
-              罗布罗夫仓鼠（Phodopus
-              roborovskii），为仓鼠亚科毛足鼠属（Phodopus）动物。
-              中国仓鼠（Cricetulus
-              griseus），为仓鼠亚科仓鼠属（Cricetulus）动物。
-              所有宠物仓鼠均为曙暮性动物，其中叙利亚和中国仓鼠为严格的独居动物，
-              而其他可作为宠物的纯种仓鼠均有不同程度的群居属性。在实际饲养过程中，
-              同一物种既可以单独饲养也可以成群饲养。如果考虑成群饲养同种鼠，
-              那么饲主应当了解每只仓鼠的性格并在饲养方式上及时作出适当的调整。
-              对于杂交的侏儒仓鼠（Phodopus sungorus ×
-              campbelli）则不建议成群饲养。
-            </p>
-            <p class="links">
-              <a href="#">Read More</a>
-            </p>
-          </div>
-        </li>
-        <li class="theme">
-          <h4 class="title"><a href="#">宠物仓鼠的饲养概要 </a></h4>
-          <p class="meta">
-            <span class="date">April 06, 2019 </span
-            ><span class="posted">Posted by <a href="#">Saphir</a></span>
-          </p>
-          <div style="clear: both;">&nbsp;</div>
-          <div class="entry">
-            <p>
-              仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。
-              本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：
-              叙利亚仓鼠（Mesocricetus auratus）
+              {{item.content}}
             </p>
             <p class="links">
               <a href="#">Read More</a>
@@ -85,8 +30,8 @@
       </ul>
       <ul class="pagination">
         <li><a href="#">«</a></li>
-        <li><a href="#">1</a></li>
-        <li><a class="active" href="#">2</a></li>
+        <li><a href="#" :class="{active: index}" >1</a></li>
+        <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
@@ -102,11 +47,47 @@ import mixinLoading from '../mixins/mixin-loading'
 export default {
   data(){
     return{
-      // timer:''
+      // timer:'',
+      title: '小宠趣事',
+      themes:[
+        {
+          id: 'th-1',
+          title: '宠物仓鼠的饲养概要',
+          date: 'April 06, 2019',
+          posted: 'Saphir',
+          content: '仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。'+
+          '本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，'+
+          '分别是：叙利亚仓鼠（Mesocricetusauratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。坎贝尔仓鼠（Phodopus campbelli）'
+        },
+        {
+          id: 'th-2',
+          title: '宠物仓鼠的饲养概要',
+          date: 'April 06, 2019',
+          posted: 'Saphir',
+          content: '仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。'+
+              '本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，分别是：'+
+              '叙利亚仓鼠（Mesocricetusauratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。坎贝尔仓鼠（Phodopuscampbelli），为仓鼠亚科毛足鼠属（Phodopus）动物。'+
+              '加卡利亚仓鼠（Phodopussungorus），为仓鼠亚科毛足鼠属（Phodopus）动物。罗布罗夫仓鼠（Phodopusroborovskii），为仓鼠亚科毛足鼠属（Phodopus）动物。'+
+              '中国仓鼠（Cricetulusgriseus），为仓鼠亚科仓鼠属（Cricetulus）动物。 所有宠物仓鼠均为曙暮性动物，其中叙利亚和中国仓鼠为严格的独居动物，'+
+              '而其他可作为宠物的纯种仓鼠均有不同程度的群居属性。在实际饲养过程中，同一物种既可以单独饲养也可以成群饲养。如果考虑成群饲养同种鼠，那么饲主应当了解每只仓鼠的性格并在饲养方式上及时作出适当的调整。'+
+              '对于杂交的侏儒仓鼠（Phodopus sungorus campbelli）则不建议成群饲养。'
+        },
+        {
+          id: 'th-3',
+          title: '宠物仓鼠的饲养概要',
+          date: 'April 06, 2019',
+          posted: 'Saphir',
+          content: '仓鼠为啮齿目仓鼠亚科（Cricetinae）动物的统称，全世界大约有7属20种。'+
+          '本期读书笔记将选择其中作为家养宠物的3属5种仓鼠（以及一个杂交种）进行讲解，'+
+          '分别是：叙利亚仓鼠（Mesocricetusauratus），为仓鼠亚科中仓鼠属（Mesocricetus）动物。坎贝尔仓鼠（Phodopus campbelli）'
+        },
+      ],
+      index: null
     }
   },
   mixins:[mixinLoading],
   mounted() {
+    this.index = true
   },
 };
 </script>

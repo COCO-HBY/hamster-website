@@ -39,6 +39,12 @@ const routes = [
           import(/* webpackChunkName: "themes" */ "../views/Themes.vue"),
       },
       {
+        path: "/themes/content",
+        name: "ThemeContent",
+        component: () =>
+          import(/* webpackChunkName: "themes" */ "../views/ThemeContent.vue"),
+      },
+      {
         path: "/contact",
         name: "Contact",
         component: () => import(/* webpackChunkName: "contact" */ "../views/Contact.vue"),

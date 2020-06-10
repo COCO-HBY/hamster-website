@@ -7,16 +7,12 @@
     <div id="container">
       <div id="nav">
         <ul>
-          <li class="current_li">
-            <router-link to="/homePage">首页</router-link>
+          <li v-for="(item, index) in navigation" :key="index" :class="{current_li: $route.path === item.path}">
+            <keep-alive><router-link :to="item.path">{{item.text}}</router-link></keep-alive>
           </li>
-          <li><router-link to="/themes">小宠趣事</router-link></li>
-          <li><router-link to="/adopt">领养仓鼠</router-link></li>
-          <li><router-link to="/about">关于仓鼠</router-link></li>
-          <li><router-link to="/contact">联系我们</router-link></li>
         </ul>
       </div>
-      <router-view/>
+      <router-view />
     </div>
     <div id="footer-content">
       <div id="hamster-sina">
@@ -59,8 +55,29 @@
 
 export default {
   name: "Home",
+  data() {
+    return {
+      navigation: [
+        { path: "/homePage", text: "首页" },
+        { path: "/themes", text: "小宠趣事" },
+        { path: "/adopt", text: "领养仓鼠" },
+        { path: "/about", text: "关于仓鼠" },
+        { path: "/contact", text: "联系我们" },
+      ],
+    };
+  },
   components: {},
-}
+  methods: {},
+  watch: {
+    $route() {
+      // 监听路由的变化
+      // console.log(this.$route.path);
+    },
+  },
+  mounted(){
+    
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -103,12 +120,12 @@ export default {
   // flex-direction: row;
 }
 #container #nav {
-	width: 306px;
-	height: 340px;
+  width: 306px;
+  height: 340px;
   margin: 0px;
   float: left;
 }
-#nav >ul {
+#nav > ul {
   height: 340px;
   padding: 0px 30px;
   margin: 0;
@@ -117,7 +134,7 @@ export default {
   justify-content: center;
   background: url(../assets/img/img02.jpg) no-repeat left top;
 }
-#nav >ul li {
+#nav > ul li {
   padding: 5px 20px;
   background: url(../assets/img/img10.jpg) repeat-x left bottom;
 }
@@ -126,6 +143,13 @@ export default {
   padding: 0px 0px 0px 35px;
   background: url(../assets/img/img13.jpg) no-repeat left 4px;
   color: #bd778e;
+}
+#nav ul li a:hover {
+  color: pink;
+}
+// 导航激活时
+#nav .current_li a {
+  color: honeydew;
 }
 
 #footer {

@@ -11,16 +11,16 @@
           <div class="adopt-info">
             <h4>Do You Like Me</h4>
             <div class="adopt-img">
-              <img src="../assets/img/adopt01.jpg" alt="picture" />
+              <img :src="pets.img" alt="picture" />
             </div>
             <div class="information">
-              <p>Name: 肠粉</p>
-              <p>Sex: 公</p>
-              <p>Age: 3个月</p>
-              <p>Favorite: 南瓜子 面包虫</p>
-              <p>Address: 广州 增城区</p>
+              <p>Name: {{pets.information.name}}</p>
+              <p>Sex: {{pets.information.sex}}</p>
+              <p>Age: {{pets.information.age}}</p>
+              <p>Favorite: {{pets.information.favorite}}</p>
+              <p>Address:{{pets.information.address}}</p>
             </div>
-            <button>申请领养</button>
+            <button @click="toAdopt">前往领养</button>
           </div>
         </div>
       </div>
@@ -95,6 +95,17 @@ export default {
   data(){
     return{
       // timer:''
+      pets:{
+        img: require('../assets/img/adopt01.jpg'),
+        information:{
+          name: '肠粉',
+          sex: '公',
+          age: '3个月',
+          favorite: '南瓜子，面包虫',
+          address: '广州增城区'
+        }
+      },
+        
     }
   },
   components: {
@@ -103,6 +114,15 @@ export default {
   mixins:[mixinLoading],
   mounted() {
   },
+  methods: {
+    toAdopt(){
+      if(window.localStorage.getItem('login')){
+        
+      }
+ 
+      this.$router.push('/adopt');
+    }
+  }
 };
 </script>
 <style lang="less" scoped>

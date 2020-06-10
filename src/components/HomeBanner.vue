@@ -22,7 +22,7 @@ export default {
     return {
       mark: 0,
       timer: null,
-      imgs: ["banner01.jpg", "banner02.jpg", "banner03.jpg", "banner05.jpg"],
+      imgs: ["banner05.jpg", "banner02.jpg", "banner03.jpg", "banner01.jpg"],
     };
   },
 
@@ -50,7 +50,7 @@ export default {
       if(this.timer){
         this.stop();
       }
-      this.timer = setInterval(this.autoPlay, 5000);
+      this.timer = setInterval(this.autoPlay, 3000);
     },
     stop() {
       clearInterval(this.timer);
